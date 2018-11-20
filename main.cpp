@@ -20,41 +20,44 @@ void print(vector<T> vec){
 }
 
 int main() {
-
     ifstream inFile;
     inFile.open("test.txt");
-
     BST_312<string> bst;
-
     string s;
     inFile >> s;
-    while (inFile) {;
+    while (inFile) {
         cout << "inserting ... " << s << endl;
         bst.insertItem(s);
         inFile >> s;
     }
-
     cout << "postorder traversal is " << endl;
     print(bst.postOrderTraversal());
     cout << endl;
-
     cout << "preorder traversal is " << endl;
     print(bst.preOrderTraversal());
     cout << endl;
-
     cout << "inorder traversal is " << endl;
     print(bst.inOrderTraversal());
     cout << endl;
-
     cout << "Remove items " << endl;
     cout << "number of nodes in tree before delete is " << bst.countNodes() << endl;
     s = "tree";
+    //s = 3;
     bst.deleteItem(s);
     print(bst.postOrderTraversal());
     cout << endl;
     cout << "number of nodes in tree after delete is " << bst.countNodes() << endl;
     cout << endl;
+    if(bst.isItemInTree("is")){
+        cout << "'is' was found in tree" << endl;
+        cout << endl;
+    }
+    if(!bst.isItemInTree("KHALID")){
+        cout << "'KHALID' was not found in tree" << endl;
+        cout << endl;
+    }
     bst.makeEmpty();
     cout << "number of nodes in tree after make empty is " << bst.countNodes() << endl;
+    inFile.close();
 }
 

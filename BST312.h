@@ -1,10 +1,9 @@
 
 /*  BST312.h
   CS 312 Fall 2018
-
   a simple implementation of a binary search tree
-
-
+  Khalid Ahmad
+  kaa2625
 */
 
 #ifndef BST_312_H
